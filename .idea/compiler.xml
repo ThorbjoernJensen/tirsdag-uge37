@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="devops-starter" />
+        <module name="tirsdag-uge37" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="devops-starter" options="-endorseddirs $PROJECT_DIR$/target/endorsed" />
+      <module name="tirsdag-uge37" options="-endorseddirs &quot;C:\Users\Lenovo\OneDrive\CPH-business\3. semester\JavaProjekter\Uge37-Rest\opgaver tirsdag\øvelser\tirsdag-uge37\target/endorsed&quot;" />
     </option>
   </component>
 </project>

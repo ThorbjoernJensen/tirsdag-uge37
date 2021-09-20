@@ -5,36 +5,44 @@
  */
 package dtos;
 
-import entities.RenameMe;
+import entities.Employee;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * @author tha
  */
-public class RenameMeDTO {
+public class EmployeeDTO {
     private long id;
     private String str1;
     private String str2;
 
-    public RenameMeDTO(String dummyStr1, String dummyStr2) {
-        this.str1 = dummyStr1;
-        this.str2 = dummyStr2;
+//    public EmployeeDTO(String name, String address) {
+//        this.str1 = name;
+//        this.str2 = address;
+//    }
+
+    public EmployeeDTO(Employee e) {
+        if (e.getId() != null)
+            this.id = e.getId();
+        this.str1 = e.getName();
+        this.str2 = e.getAddress();
     }
-    
-    public static List<RenameMeDTO> getDtos(List<RenameMe> rms){
-        List<RenameMeDTO> rmdtos = new ArrayList();
-        rms.forEach(rm->rmdtos.add(new RenameMeDTO(rm)));
+
+
+    public static List<EmployeeDTO> getDtos(List<Employee> rms) {
+        List<EmployeeDTO> rmdtos = new ArrayList();
+        rms.forEach(rm -> rmdtos.add(new EmployeeDTO(rm)));
         return rmdtos;
     }
 
+    public long getId() {
+        return id;
+    }
 
-    public RenameMeDTO(RenameMe rm) {
-        if(rm.getId() != null)
-            this.id = rm.getId();
-        this.str1 = rm.getDummyStr1();
-        this.str2 = rm.getDummyStr2();
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getDummyStr1() {
@@ -57,10 +65,6 @@ public class RenameMeDTO {
     public String toString() {
         return "RenameMeDTO{" + "id=" + id + ", str1=" + str1 + ", str2=" + str2 + '}';
     }
-    
-    
-    
-    
-    
-    
+
+
 }
